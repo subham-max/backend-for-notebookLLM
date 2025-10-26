@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: subham's-notebookllm-backend
+    env: node
+    region: oregon
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      PORT: 10000
+      MONGODB_URI:
+        fromDatabase:
+          name: notebooklm-db
+          property: mongodb+srv://SubhamPaul:lW0eFGTaHyNh98By@clusterllmclone.pkehx6o.mongodb.net/?retryWrites=true&w=majority&appName=ClusterLLMClone
+      GEMINI_API_KEY: AIzaSyCIAOA4YX8M6HvxxAkkr6rdvDCpQ0GRd0I
+      CLIENT_URL: "*"
