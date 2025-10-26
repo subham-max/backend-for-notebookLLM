@@ -9,6 +9,19 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'NotebookLM Clone Backend API is running!',
+    endpoints: {
+      upload: '/api/documents/upload (POST)',
+      query: '/api/documents/{id}/query (POST)',
+      getDoc: '/api/documents/{id} (GET)',
+      pdf: '/uploads/{filename} (GET)'
+    },
+    status: 'OK'
+  });
+});
+
 app.use(cors({
   origin: 'http://localhost:5173',  // ALLOW VITE
   credentials: true
