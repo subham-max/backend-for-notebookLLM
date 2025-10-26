@@ -26,7 +26,8 @@ app.use(cors({
   origin: [
     'https://notebookllm-git-main-subhammaxs-projects.vercel.app',  // Your Vercel URL
     'http://localhost:5173',  // Local development
-    'http://localhost:3000'   // Backup local
+    'http://localhost:3000' ,
+    "https://notebookllm-lime.vercel.app"  // Backup local
   ],
   credentials: true,
   optionsSuccessStatus: 200  // For older browsers
